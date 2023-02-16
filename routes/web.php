@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/signup', [HomeController::class, 'signup'])->name('signup');
+
+Route::post('/signup', [HomeController::class, 'signupStore'])->name('signup.store');
+
+Route::get('/users', [UserController::class, 'index'])->name('user.index');
