@@ -31,8 +31,7 @@ class HomeController extends Controller
         if ($password == $passwordRepeted) {
             $user->password = bcrypt($password);
             $user->save();
-            return redirect('users');
+            return redirect()->route('users.index');
         }
-
     }
 }

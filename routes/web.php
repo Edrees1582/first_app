@@ -21,4 +21,18 @@ Route::get('/signup', [HomeController::class, 'signup'])->name('signup');
 
 Route::post('/signup', [HomeController::class, 'signupStore'])->name('signup.store');
 
-Route::get('/users', [UserController::class, 'index'])->name('user.index');
+Route::group(['prefix' => 'users'], function () {
+    Route::get('/', [UserController::class, 'index'])->name('users.index');
+    
+    Route::get('/create', [UserController::class, 'create'])->name('users.create');
+    
+    Route::post('', [UserController::class, 'store'])->name('users.store');
+    
+    Route::get('/{id}', [UserController::class, 'show'])->name('users.show');
+    
+    Route::get('/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+    
+    Route::put('/{id}', [UserController::class, 'update'])->name('users.update');
+    
+    Route::delete('/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+});

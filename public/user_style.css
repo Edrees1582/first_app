@@ -94,6 +94,14 @@ table.table td a.edit {
 table.table td a.delete {
 	color: #F44336;
 }
+a.edit {
+	color: #FFC107;
+}
+.delete {
+	color: #F44336;
+	border: none;
+	padding: 0;
+}
 table.table td i {
 	font-size: 19px;
 }

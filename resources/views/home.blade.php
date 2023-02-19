@@ -34,7 +34,7 @@
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
         <div class="w3-display-topleft w3-padding-large w3-xlarge">
             <a href='{{ route('signup') }}'> Signup </a> |
-            <a href='{{ route('user.index') }}'> Users </a> |
+            <a href='{{ route('users.index') }}'> Users </a> |
             <a href="#"> Blogs </a>
         </div>
 
